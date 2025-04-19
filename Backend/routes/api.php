@@ -10,3 +10,9 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 //define a route for the user controller
 use App\Http\Controllers\API\UserController;
 Route::get('/users', [UserController::class, 'index']);
+
+use App\Models\User;
+Route::get('/users', function () {
+    return User::all(); // Fetches all users as JSON
+});
+

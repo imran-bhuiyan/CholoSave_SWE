@@ -7,3 +7,10 @@ Route::get('/', function () {
 });
 
 require __DIR__.'/auth.php';
+
+use App\Models\User;
+
+Route::get('/users', function () {
+    return User::all();
+});
+
